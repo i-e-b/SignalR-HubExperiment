@@ -13,8 +13,14 @@ namespace SignalrSqlSender
 
         public void Reply(string message)
         {
-            StatusMessage.Write("Got a reply: " + message);
-            Clients.Caller.addMessage("I got your " + message);
+            StatusMessage.Write("Got a reply: " + message + ", from " + Context.ConnectionId);
+
+            CallerOnThisHub().Send("I got your " + message + ", " + Context.ConnectionId);
+        }
+
+        private dynamic CallerOnThisHub()
+        {
+            return GlobalHost.ConnectionManager.GetHubContext<MessageHub>().Clients.Client(Context.ConnectionId);
         }
 
         public override Task OnConnected()

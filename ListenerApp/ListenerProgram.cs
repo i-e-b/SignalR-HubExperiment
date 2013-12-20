@@ -18,7 +18,7 @@ namespace ListenerApp
             Thread.Sleep(2000);
             var endpoint = ConfigurationManager.AppSettings["ServerHost"];
 
-            var conn = OwinHostedListener(endpoint);
+            var conn = HttpListener(endpoint);
 
             Console.WriteLine("Listening. Press enter to exit");
             Console.ReadLine();
@@ -26,15 +26,16 @@ namespace ListenerApp
             conn.Stop();
         }
 
-        static HubConnection OwinHostedListener(string endpoint)
+        static HubConnection HttpListener(string endpoint)
         {
             _conn = new HubConnection(endpoint);
-
             _conn.StateChanged += conn_StateChanged;
+
 
             _proxy = _conn.CreateHubProxy("MessageHub");
             _proxy.On<string>("Send", ShowMessage);
             _proxy.On<string>("Reply", ShowReply);
+
 
             _conn.Start();
             return _conn;
@@ -45,7 +46,7 @@ namespace ListenerApp
             switch (obj.NewState)
             {
                 case ConnectionState.Connected:
-                    StatusMessage.Write("Connected");
+                    StatusMessage.Write("Connected; I am " + _conn.ConnectionId);
                     break;
                 case ConnectionState.Reconnecting:
                     StatusMessage.Write("Lost connection");
