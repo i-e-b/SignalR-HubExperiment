@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Common;
 using Microsoft.AspNet.SignalR;
 
 namespace SignalrSqlSender
@@ -10,16 +11,22 @@ namespace SignalrSqlSender
         {
             Clients.All.addMessage(message);
         }
+
+        public void Reply(string message)
+        {
+            Clients.Caller.addMessage("I got your " + message);
+        }
+
         public override Task OnConnected()
         {
-            Console.WriteLine("Client connected");
+            StatusMessage.Write("Client connected");
 
             return base.OnConnected();
         }
 
         public override Task OnDisconnected()
         {
-            Console.WriteLine("Client disconnected");
+            StatusMessage.Write("Client disconnected");
 
             return base.OnDisconnected();
         }

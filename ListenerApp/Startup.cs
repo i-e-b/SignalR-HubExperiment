@@ -8,7 +8,7 @@ namespace ListenerApp
     {
         public void Configuration(IAppBuilder app)
         {
-            GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.ConnectionStrings["SignalRBackplane"].ConnectionString);
+            //GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.ConnectionStrings["SignalRBackplane"].ConnectionString);
             app.MapSignalR();
         }
     }

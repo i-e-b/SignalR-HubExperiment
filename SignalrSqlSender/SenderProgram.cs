@@ -5,11 +5,11 @@ using Microsoft.Owin.Hosting;
 
 namespace SignalrSqlSender
 {
-    class Program
+    class SenderProgram
     {
         static void Main()
         {
-            Console.WriteLine("Message sender over SQL backplane");
+            Console.WriteLine("Message SENDER");
             var endpoint = ConfigurationManager.AppSettings["ServerHost"];
 
             OwinHostedSender(endpoint);
@@ -24,6 +24,7 @@ namespace SignalrSqlSender
                 string line;
 
                 var ctx = GlobalHost.ConnectionManager.GetHubContext<MessageHub>();
+
 
                 Console.WriteLine("Write messages (blank line to exit)");
                 while ((line = Console.ReadLine()) != "")

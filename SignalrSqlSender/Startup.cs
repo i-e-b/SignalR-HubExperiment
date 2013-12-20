@@ -8,7 +8,7 @@ namespace SignalrSqlSender
     {
         public void Configuration(IAppBuilder app)
         {
-            GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.ConnectionStrings["SignalRBackplane"].ConnectionString);
+           // GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.ConnectionStrings["SignalRBackplane"].ConnectionString);
             if (app != null) app.MapSignalR();
         }
     }
