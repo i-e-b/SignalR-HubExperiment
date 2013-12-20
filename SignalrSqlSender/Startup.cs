@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using Microsoft.AspNet.SignalR;
-using Owin;
+﻿using Owin;
 
 namespace SignalrSqlSender
 {
@@ -8,7 +6,6 @@ namespace SignalrSqlSender
     {
         public void Configuration(IAppBuilder app)
         {
-           // GlobalHost.DependencyResolver.UseSqlServer(ConfigurationManager.ConnectionStrings["SignalRBackplane"].ConnectionString);
             if (app != null) app.MapSignalR();
         }
     }

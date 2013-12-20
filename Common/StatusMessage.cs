@@ -8,7 +8,7 @@ namespace Common
         {
             string leader;
             try {
-                var w = Math.Max(0, Console.BufferWidth - s.Length);
+                var w = Math.Max(0, Console.BufferWidth - s.Length - 1);
                 leader = new string(' ', w);
             } catch {
                 leader = " > ";

@@ -34,6 +34,7 @@ namespace ListenerApp
 
             _proxy = _conn.CreateHubProxy("MessageHub");
             _proxy.On<string>("Send", ShowMessage);
+            _proxy.On<string>("Reply", ShowReply);
 
             _conn.Start();
             return _conn;
@@ -63,6 +64,10 @@ namespace ListenerApp
             {
                 Console.WriteLine("server said \"" + message + "\"");
             }
+        }
+        private static void ShowReply(string message)
+        {
+            Console.WriteLine("server replied directly to us: \"" + message + "\"");
         }
     }
 }
