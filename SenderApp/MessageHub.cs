@@ -2,7 +2,7 @@
 using Common;
 using Microsoft.AspNet.SignalR;
 
-namespace SignalrSqlSender
+namespace SenderApp
 {
     public class MessageHub : Hub
     {

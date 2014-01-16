@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalrSqlSender", "SignalrSqlSender\SignalrSqlSender.csproj", "{36A9D4B9-9F6B-4456-8F62-8FF492BF4098}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SenderApp", "SenderApp\SenderApp.csproj", "{36A9D4B9-9F6B-4456-8F62-8FF492BF4098}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListenerApp", "ListenerApp\ListenerApp.csproj", "{115D0B3A-5ECC-4432-A219-208058A16701}"
 EndProject

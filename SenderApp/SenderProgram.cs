@@ -3,7 +3,7 @@ using System.Configuration;
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Hosting;
 
-namespace SignalrSqlSender
+namespace SenderApp
 {
     class SenderProgram
     {

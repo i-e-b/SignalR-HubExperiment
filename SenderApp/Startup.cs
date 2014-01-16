@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace SignalrSqlSender
+namespace SenderApp
 {
     public class Startup
     {

@@ -58,17 +58,17 @@ namespace ListenerApp
         {
             if (message.StartsWith("ping"))
             {
-                Console.WriteLine("server said \"ping\", I will send \"pong\"");
+                Console.WriteLine("sender said \"ping\", I will send \"pong\"");
                 _proxy.Invoke("Reply", "pong");
             }
             else
             {
-                Console.WriteLine("server said \"" + message + "\"");
+                Console.WriteLine("sender said \"" + message + "\"");
             }
         }
         private static void ShowReply(string message)
         {
-            Console.WriteLine("server replied directly to us: \"" + message + "\"");
+            Console.WriteLine("sender replied directly to us: \"" + message + "\"");
         }
     }
 }
