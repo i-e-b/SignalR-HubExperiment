@@ -8,13 +8,14 @@ namespace SenderApp
     {
         public void Send(string message)
         {
-            Clients.All.addMessage(message);
+            Clients.Caller.addMessage(message);
         }
 
         public void Reply(string message)
         {
             StatusMessage.Write("Got a reply: " + message + ", from " + Context.ConnectionId);
 
+            // CallerOnThisHub().Send("I got your " + message + ", " + Context.ConnectionId);
             CallerOnThisHub().Send("I got your " + message + ", " + Context.ConnectionId);
         }
 
